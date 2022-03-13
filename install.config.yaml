@@ -13,7 +13,6 @@
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore_global:
-    ~/.hgrc:
     ~/.pythonrc:
     ~/.shell:
     ~/.tmux.conf:
