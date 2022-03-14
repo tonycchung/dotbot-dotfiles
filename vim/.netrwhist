@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/anthonychung/dotfiles-local'
+let g:netrw_dirhist_4='/Users/anthonychung/dotfiles-local/git_template.local'
+let g:netrw_dirhist_3='/Users/anthonychung/dotfiles-local/git_template.local/hooks'
+let g:netrw_dirhist_2='/Users/anthonychung/dotfiles-local/git_template.local'
+let g:netrw_dirhist_1='/Users/anthonychung/dotfiles-local'
+let g:netrw_dirhist_0='/Users/anthonychung/dotfiles'
+let g:netrw_dirhist_9='/Users/anthonychung/dotfiles-local'
+let g:netrw_dirhist_8='/Users/anthonychung'
+let g:netrw_dirhist_7='/Users/anthonychung/dotfiles'
+let g:netrw_dirhist_6='/Users/anthonychung/dotfiles-old'
