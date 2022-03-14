@@ -47,9 +47,6 @@ augroup vimrcEx
     \zshenv.local,zlogin.local,zlogout.local,zshrc.local,zprofile.local,
     \*/zsh/configs/*
     \ set filetype=sh
-  autocmd BufRead,BufNewFile gitconfig.local set filetype=gitconfig
-  autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
-  autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
 " ALE linting events
@@ -86,18 +83,18 @@ set list listchars=tab:»·,trail:·,nbsp:·
 set nojoinspaces
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in fzf for listing files. Lightning fast and respects .gitignore
-  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
-endif
+" if executable('ag')
+"   " Use Ag over Grep
+"   set grepprg=ag\ --nogroup\ --nocolor
+"
+"   " Use ag in fzf for listing files. Lightning fast and respects .gitignore
+"   let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
+"
+"   if !exists(":Ag")
+"     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+"     nnoremap \ :Ag<SPACE>
+"   endif
+" endif
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -221,6 +218,8 @@ nnoremap <c-p> :GFiles<cr>
 
 "" Map ctrl-g to fzf ripgrep
 nnoremap <c-g> :Rg<Cr>
+
+nnoremap <leader>/ :BLines<cr>
 
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
