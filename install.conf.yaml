@@ -6,14 +6,9 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.agignore:
-    ~/.bash:
-    ~/.bash_profile:
-    ~/.bashrc:
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore_global:
-    ~/.pythonrc:
     ~/.shell:
     ~/.tmux.conf:
     ~/.vim:
