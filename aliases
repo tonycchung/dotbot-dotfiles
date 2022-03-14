@@ -1,0 +1,25 @@
+# Unix
+alias ll="ls -al"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Bundler
+alias b="bundle"
+
+# Rails
+alias c="be rails console"
+alias rs="be rails server"
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# Git
+alias gfo="git fetch origin"
+alias gu="git fetch origin && git rebase -i origin/master"
+
+alias ctags="`brew --prefix`/bin/ctags"
+alias pgstart="brew services start postgresql"
+alias pgstop="brew services stop postgresql"
