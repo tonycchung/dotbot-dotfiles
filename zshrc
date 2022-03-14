@@ -52,8 +52,8 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER=$(whoami)
 
-export EDITOR=opt/homebrew/bin/vim
-export VISUAL=opt/homebrew/bin/vim
+export EDITOR=/opt/homebrew/bin/vim
+export VISUAL=/opt/homebrew/bin/vim
 
 # Use ripgrep for fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
