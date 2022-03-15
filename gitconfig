@@ -23,7 +23,7 @@
   pf = push --force-with-lease
   st = status
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   autocrlf = input
 [merge]
   ff = only
