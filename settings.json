@@ -1,0 +1,78 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "files.autoSave": "afterDelay",
+  "python.venvPath": "~/Library/Caches/pypoetry/virtualenvs",
+  "vim.vimrc.enable": true,
+  "telemetry.telemetryLevel": "off",
+  "editor.inlineSuggest.enabled": true,
+  "editor.autoClosingBrackets": "languageDefined",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggestSelection": "first",
+  "explorer.confirmDelete": false,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "javascript.suggest.names": false,
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[terraform]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "pylint.lintOnChange": true,
+  "pylint.args": ["--load-plugins", "pylint_django"],
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": "off",
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "isort.args": ["--profile", "black"],
+  "githubPullRequests.defaultMergeMethod": "squash",
+  "githubPullRequests.terminalLinksHandler": "github",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "files.insertFinalNewline": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "editor.wordWrap": "on",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    "*.tsx": "typescriptreact"
+  },
+  "playwright.reuseBrowser": false,
+  "editor.accessibilitySupport": "off",
+  "window.zoomLevel": -1
+}
