@@ -114,3 +114,5 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
+### Added by node-macos-certs on Thu Feb 15 17:22:32 PST 2024 ###
+export NODE_EXTRA_CA_CERTS="/Users/tony.chung/.local/node-macos-certs/certs.pem"
