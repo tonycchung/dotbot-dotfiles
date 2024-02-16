@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/tony.chung/personal/dotfiles'
 let g:netrw_dirhist_1='/Users/tony.chung/workspace/idme-marketplace'
 let g:netrw_dirhist_0='/Users/tony.chung/personal/dotfiles/vim/pack/vendor/start'
 let g:netrw_dirhist_9='/Users/tony.chung/personal/dotfiles/vim/pack/vendor'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/Users/tony.chung/personal/dotfiles'
 let g:netrw_dirhist_5='/Users/tony.chung/workspace/idme-marketplace/elasticsearch-8.12.1/config'
 let g:netrw_dirhist_4='/Users/tony.chung/workspace/idme-marketplace/config/environments'
 let g:netrw_dirhist_3='/Users/tony.chung/workspace/idme-marketplace/config'
-let g:netrw_dirhist_2='/Users/tony.chung'
