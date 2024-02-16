@@ -24,3 +24,11 @@ alias gu="git fetch origin && git rebase -i origin/master"
 alias ctags="`brew --prefix`/bin/ctags"
 alias pgstart="brew services start postgresql"
 alias pgstop="brew services stop postgresql"
+
+# Attach to docker containers
+alias dat='docker attach $(docker ps | awk "$5 ~ /pytest/ {print $1}")'
+alias dad='docker attach $(docker ps | awk "$5 ~ /uvicorn/ {print $1}")'
+
+# Spin up apps
+alias bu="make backend-up"
+alias fu="make frontend-up"

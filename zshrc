@@ -6,6 +6,9 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
+# For poetry zsh completion
+fpath+=~/.zfunc
+
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
 _load_settings() {
@@ -62,7 +65,7 @@ export VISUAL=/opt/homebrew/bin/vim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git history history-substring-search postgres)
+plugins=(git history history-substring-search postgres poetry)
 
 # Disable autocorrect
 unsetopt correct_all
@@ -70,20 +73,20 @@ unsetopt correct
 
 DISABLE_AUTO_TITLE="true"
 
-# Add postgres to path
-# export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# PATHs
+# PATH="/Users/anthonychung/Library/Python/3.9.10/bin:$PATH"
+PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/:$PATH"
+PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
 
-# # openssl
-# # For compilers to find openssl@1.1 you may need to set:
-# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-#
-# # For pkg-config to find openssl@1.1 you may need to set:
-# export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-#
-# # python3
-# export PATH="/usr/local/opt/python3/bin:$PATH"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/anthonychung/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/anthonychung/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/anthonychung/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anthonychung/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -91,6 +94,9 @@ source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Link zsh to asdf
 . $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+# PYTHON
+PYTHONPATH=$HOME/workspace/security-pal/backend
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,6 +127,5 @@ if [[ -z "$TMUX" ]] ;then
         tmux attach-session -t "$ID" # if available attach to it
     fi
 fi
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
