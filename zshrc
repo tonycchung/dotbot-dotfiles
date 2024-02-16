@@ -1,9 +1,6 @@
 # startup script
 ulimit -n 10240
 
-# Link zsh to asdf
-. $(brew --prefix)/opt/asdf/libexec/asdf.sh
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -73,16 +70,6 @@ unsetopt correct
 
 DISABLE_AUTO_TITLE="true"
 
-# Attach or start new tmux session
-if [[ -z "$TMUX" ]] ;then
-    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        exec tmux new-session -A -s workspace
-    else
-        tmux attach-session -t "$ID" # if available attach to it
-    fi
-fi
-
 # Add postgres to path
 # export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 # export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
@@ -98,6 +85,13 @@ fi
 # # python3
 # export PATH="/usr/local/opt/python3/bin:$PATH"
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Link zsh to asdf
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
 source $ZSH/oh-my-zsh.sh
 
 # aliases
@@ -109,10 +103,24 @@ source $ZSH/oh-my-zsh.sh
 # # Load work zshrc settings
 # [[ -f ~/.zshrc.work.local ]] && source ~/.zshrc.work.local
 
-# TODO: remove?
+# Remove?
 # export PATH="$HOME/.bin:$PATH"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ES_HOME=$HOME/.bin/elasticsearch-8.12.1/bin/elasticsearch
+export PATH=$ES_HOME/bin:$PATH
+
 ### Added by node-macos-certs on Thu Feb 15 17:22:32 PST 2024 ###
 export NODE_EXTRA_CA_CERTS="/Users/tony.chung/.local/node-macos-certs/certs.pem"
+
+# Attach or start new tmux session
+if [[ -z "$TMUX" ]] ;then
+    ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
+    if [[ -z "$ID" ]] ;then # if not available create a new one
+        exec tmux new-session -A -s workspace
+    else
+        tmux attach-session -t "$ID" # if available attach to it
+    fi
+fi
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
