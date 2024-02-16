@@ -49,6 +49,26 @@ augroup vimrcEx
     \ set filetype=sh
 augroup END
 
+" ALE linting events
+" augroup ale
+"   autocmd!
+"
+"   if g:has_async
+"     autocmd VimEnter *
+"       \ set updatetime=1000 |
+"       \ let g:ale_lint_on_text_changed = 0
+"     autocmd CursorHold * call ale#Queue(0)
+"     autocmd CursorHoldI * call ale#Queue(0)
+"     autocmd InsertEnter * call ale#Queue(0)
+"     autocmd InsertLeave * call ale#Queue(0)
+"   else
+"     echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
+"   endif
+" augroup END
+
+" Run black on save
+autocmd BufWritePre *.py execute ':Black'
+
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -205,7 +225,14 @@ nnoremap <c-p> :GFiles<cr>
 "" Map ctrl-g to fzf ripgrep
 nnoremap <c-g> :Rg<Cr>
 
+"" Highlight all searches
 nnoremap <leader>/ :BLines<cr>
+
+" Insert pry
+map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
+
+"" Insert breakpoint()
+map <Leader>bp obreakpoint()<esc>:w<cr>
 
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
@@ -248,21 +275,23 @@ nmap <leader>in :IndentGuidesToggle<cr>
 " au Syntax * RainbowParenthesesLoadBraces
 
 " Syntax linter
-let g:ale_lint_delay = 200 " Default 200
-let g:ale_lint_on_enter = 0
-let g:ale_warn_about_trailing_whitespace = 0
-let g:ale_linters = {
-\  'html'         : ['HTMLHint'],
-\  'javascript'   : ['eslint'],
-\  'java'         : ['checkstyle'],
-\  'json'         : ['json-lint'],
-\  'markdown'     : ['mdl', 'proselint', 'vale'],
-\  'ruby'         : ['rubocop'],
-\  'sass'         : ['sass-lint'],
-\  'scss'         : ['sass-lint'],
-\  'sql'          : ['sqlint'],
-\  'yaml'         : ['swaglint'],
-\}
+" let g:ale_lint_delay = 100 " Default 200
+" let g:ale_lint_on_enter = 0
+" let g:ale_warn_about_trailing_whitespace = 0
+" let g:ale_linters = {
+" \  'css'          : ['prettier'],
+" \  'html'         : ['HTMLHint'],
+" \  'javascript'   : ['prettier'],
+" \  'java'         : ['checkstyle'],
+" \  'json'         : ['json-lint'],
+" \  'markdown'     : ['mdl', 'proselint', 'vale'],
+" \  'python'       : ['pylint'],
+" \  'ruby'         : ['rubocop'],
+" \  'sass'         : ['sass-lint'],
+" \  'scss'         : ['sass-lint'],
+" \  'sql'          : ['sqlint'],
+" \  'yaml'         : ['swaglint'],
+" \}
 
 " Quick Explore
 nmap <leader>e :Explore<cr>
@@ -318,9 +347,6 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 " Ruby/Rails
 " Replace new ruby hash syntax with hash rockets
 noremap <leader>ro :%s/\(\w*\): \([':]\)/:\1 => \2/gc
-
-" Insert pry
-map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
 
 " Copy vim text to OSX clipboard
 map <C-x> :!pbcopy<CR>
