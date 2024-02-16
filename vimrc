@@ -65,6 +65,9 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
+" Point to correct fzf
+set rtp+=/opt/homebrew/opt/fzf
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " if executable('ag')
 "   " Use Ag over Grep
@@ -325,3 +328,6 @@ map <C-c> :w !pbcopy<CR><CR>
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Fix suspend from vim to tmux
+set shell=/opt/homebrew/bin/zsh
