@@ -26,7 +26,14 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   hooksPath = /Users/tony.chung/githooks
+  page = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  light = false
 [merge]
+  conflictstyle = diff3
   ff = only
 [commit]
   template = ~/.gitmessage
@@ -37,6 +44,8 @@
 [include]
   path = ~/.gitconfig.local
 [diff]
-  colorMoved = zebra
+  colorMoved = default
 [rerere]
   enabled = true
+[credential]
+  helper = osxkeychain
