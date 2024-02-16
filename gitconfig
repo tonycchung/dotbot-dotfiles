@@ -25,6 +25,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+  hooksPath = /Users/tony.chung/githooks
 [merge]
   ff = only
 [commit]

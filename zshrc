@@ -1,3 +1,9 @@
+# startup script
+ulimit -n 10240
+
+# Link zsh to asdf
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -105,3 +111,6 @@ source $ZSH/oh-my-zsh.sh
 
 # TODO: remove?
 # export PATH="$HOME/.bin:$PATH"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/opt/asdf/libexec/asdf.sh

@@ -49,23 +49,6 @@ augroup vimrcEx
     \ set filetype=sh
 augroup END
 
-" ALE linting events
-augroup ale
-  autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-      \ set updatetime=1000 |
-      \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -188,7 +171,7 @@ nmap k gk
 
 " Colors / highlighting
 syntax enable
-colorscheme one
+colorscheme onedark
 set background=dark
 
 " lightline settings
@@ -198,7 +181,7 @@ set showtabline=2
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'relativepath', 'modified' ] ],
@@ -256,10 +239,10 @@ nmap <leader>nu :set nu!<cr>
 nmap <leader>in :IndentGuidesToggle<cr>
 
 " Turn on rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " Syntax linter
 let g:ale_lint_delay = 200 " Default 200
