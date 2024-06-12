@@ -62,3 +62,6 @@
 [submodule "vim/pack/plugins/start/lightline.vim"]
 	path = vim/pack/plugins/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/pack/vendor/start/vim-rhubarb"]
+	path = vim/pack/vendor/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
